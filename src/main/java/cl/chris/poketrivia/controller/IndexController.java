@@ -17,13 +17,5 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping
-    public ResponseEntity<String> getAllRE(){
-        return new ResponseEntity<>("Ola ke ase", HttpStatus.OK);
-    }
 
-    @GetMapping
-    public String getAll(){
-        return "Ola ke ase";
-    }
 }
