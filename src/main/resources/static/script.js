@@ -74,6 +74,7 @@ function obtenerDatosPokemon() {
                 <p>Ataques: ${ataques.join(", ")}</p>      
             `;
 
+
             // Agregar la imagen al elemento
             pokemonInfoElement.appendChild(imagenElement);
 

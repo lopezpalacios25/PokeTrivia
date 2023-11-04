@@ -10,17 +10,17 @@ import java.util.Random;
 
 @Service
 @RequiredArgsConstructor
-public class PokemonService {
+public class PokemonServiceImpl implements IPokemonService{
 
     private final RestTemplate restTemplate;
-    Random random = new Random();
-    int idPokemonAzar = random.nextInt(151) + 1;
+
 
     @Value("${pokeapibase.url}")
     private String pokeApiBaseUrl;
-    public PokemonDTO getPokemon(){
-
-        PokemonDTO response = restTemplate.getForObject(pokeApiBaseUrl+"25", PokemonDTO.class);
+    public PokemonDTO obtenerPokemon(){
+        Random random = new Random();
+        int idPokemonAzar = random.nextInt(151) + 1;
+        PokemonDTO response = restTemplate.getForObject(pokeApiBaseUrl+idPokemonAzar, PokemonDTO.class);
         return response;
     }
 }

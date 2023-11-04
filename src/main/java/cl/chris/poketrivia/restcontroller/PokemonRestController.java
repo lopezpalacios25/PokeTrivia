@@ -1,7 +1,7 @@
 package cl.chris.poketrivia.restcontroller;
 
 import cl.chris.poketrivia.dto.PokemonDTO;
-import cl.chris.poketrivia.service.PokemonService;
+import cl.chris.poketrivia.service.PokemonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PokemonRestController {
 
     @Autowired
-    private PokemonService objPokemonService;
+    private PokemonServiceImpl objPokemonServiceImpl;
 
     @GetMapping
     public ResponseEntity<PokemonDTO> getPokemon(){
 
-        return new ResponseEntity<>(objPokemonService.getPokemon() , HttpStatus.OK);
+        return new ResponseEntity<>(objPokemonServiceImpl.obtenerPokemon() , HttpStatus.OK);
     }
 
 }
